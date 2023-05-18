@@ -1,0 +1,126 @@
+:root{
+    --text-color: #1afe49;
+}
+body{
+    background-color: black;
+    color: var(--text-color);
+    font-family: 'Courier New', Courier, monospace;
+    padding: 2em;
+    
+}
+
+header{
+    display:flex;
+    justify-content: space-between;
+}
+
+#hname{
+    justify-content: right;
+    /* Ensures the content is not revealed until the animation */
+    overflow: hidden;
+    /* The typwriter cursor */
+    border-right: .15em solid var(--text-color); 
+    /* Keeps the content on a single line */
+    white-space: nowrap; 
+    /* Gives that scrolling effect as the typing happens */
+    margin: auto 0; 
+    /* Adjust as needed */
+    letter-spacing: .2em;
+    animation: 
+        typing 3s steps(13, end) 1 forwards,
+        blink-caret .75s step-end infinite;
+}
+
+#hprofession{
+    opacity: 0;
+    animation: fadeIn 5s linear 3s 1 forwards;
+}
+
+#hpersona{
+    line-height: 1.5em;
+}
+
+#hcontact{
+    padding:.5em;
+    line-height: .5em;
+    opacity: 0;
+    animation: fadeIn 5s linear 3s 1 forwards;
+}
+
+#resume{
+    display:flex;
+    justify-content: space-around;
+    gap: 7em;
+}
+
+#rcontent{
+    text-align: justify;
+}
+.pbar{
+    display: flex;
+}
+
+.load{
+    overflow:hidden;
+    white-space: nowrap;
+    margin: auto 0; 
+    animation: 
+    typing 3s step(10, end) 1 forwards,
+    blink-caret .75s step-end infinite;
+}
+
+.bullet{
+    display:flex;
+}
+
+.skill-container {
+    display: flex;
+}
+
+.loading-container {
+    position: relative;
+    width: 10ch;
+    height: 2ex;
+    display: inline-block;
+}
+
+.skill-container span {
+    display: inline-block;
+    width: 1ch;
+}
+
+.loading-container div {
+    display: inline;
+    text-align: left;
+    position: absolute;
+    background: black;
+    width: 10ch;
+}
+
+.set-load {
+    overflow: hidden;
+    animation: loading 2s steps(10) 0.5s 1 forwards;
+}
+
+/* The loading effect */
+@keyframes loading {
+    from { width: 0 }
+    to { width: 10ch }
+  }
+
+/* The typing effect */
+@keyframes typing {
+    from { width: 0 }
+    to { width: 17ch }
+  }
+  
+  /* The typewriter cursor effect */
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: var(--text-color); }
+  }
+
+  @keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
